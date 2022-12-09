@@ -1,0 +1,455 @@
+{
+  "map": {
+    "zoom": 10,
+      "centerx": 23.129162,
+      "centery": 113.264434,
+    "minZoom": 3,
+    "maxZoom": 18,
+    "centerAutoLevel": 15,
+    "copyright": false,
+    "key": "6fe4d53520b115130f79e3f41e3cb4bb",
+    "controls": [
+      {
+        "type": "mousePosition",
+        "options": {
+          "emptyString": "无数值",
+          "position": "bottomleft"
+        },
+        "visible": true
+      },
+      {
+        "type": "minimap",
+        "options": {
+          "defaultType": "TianDiTu.Normal.Map",
+          "position": "bottomright",
+          "toggleDisplay": true,
+          "zoomAnimation": true,
+          "width": 400,
+          "height": 250
+        },
+        "visible": true
+      },
+      {
+        "type": "scale",
+        "options": {
+          "position": "bottomleft"
+        },
+        "visible": true
+      },
+      {
+        "type": "iconLayers",
+        "options": {
+          "position": "bottomleft",
+          "maxLayersInRow": 4
+        },
+        "visible": true
+      },
+      {
+        "type": "navbar",
+        "options": {
+          "position": "topleft",
+          "forwardTitle": "返回前一视图",
+          "backTitle": "返回后一视图",
+          "homeTitle": "返回默认视图"
+        },
+        "visible": true
+      },
+      {
+        "type": "locate",
+        "options": {
+          "position": "topleft",
+          "strings": {
+            "title": "定位至当前所在位置",
+            "metersUnit": "米",
+            "feetUnit": "英尺",
+            "popup": "你距离到这点不到{distance}{unit}"
+          }
+        },
+        "visible": true
+      },
+      {
+        "type": "fullscreen",
+        "options": {
+          "position": "topleft",
+          "title": {
+            "false": "进入全屏",
+            "true": "退出全屏"
+          }
+        },
+        "visible": true
+      },
+      {
+        "type": "geoSearch",
+        "options": {
+          "position": "topleft",
+          "style": "button",
+          "showMarker": true,
+          "showPopup": true,
+          "searchLabel": "请输入要搜索的地方",
+          "notFoundMessage": "无结果",
+          "autoClose": true,
+          "autoComplete": true,
+          "keepResult": true
+        },
+        "visible": true
+      },
+      {
+        "type": "contextmenu",
+        "options": {
+          "contextmenu": true,
+          "contextmenuWidth": 140,
+          "contextmenuItems": [
+            {
+              "text": "移到到此处",
+              "callback": "centerMap",
+              "icon": "/static/img/finger-right.png"
+            },
+            {
+              "text": "显示此处经纬度",
+              "callback": "showCoordinates",
+              "icon": "/static/img/locate.png"
+            },
+            "-",
+            {
+              "text": "放大",
+              "callback": "zoomIn",
+              "icon": "/static/img/zoom-in.png"
+            },
+            {
+              "text": "缩小",
+              "callback": "zoomOut",
+              "icon": "/static/img/zoom-out.png"
+            }
+          ]
+        },
+        "visible": true
+      }
+    ],
+    "basemaps": [
+      {
+        "name": "天地图(卫星)",
+        "type": "TianDiTu.Satellite.Map",
+        "icon": "/static/img/tiandituimage.png",
+        "visible": true,
+        "annotion":  "TianDiTu.Satellite.Annotion"
+      },
+      {
+        "name": "Arcgis(街道)",
+        "type": "Arcgis.Normal.Map",
+        "icon": "/static/img/arcgis-street.png",
+        "visible": true
+      },
+      {
+        "name": "天地图(街道)",
+        "type": "TianDiTu.Normal.Map",
+        "visible": true,
+        "icon": "/static/img/tianditumap.png",
+        "annotion":"TianDiTu.Normal.Annotion"
+      },
+
+      {
+        "name": "天地图(地形)",
+        "type": "TianDiTu.Terrain.Map",
+        "icon": "/static/img/tianditudem.png",
+        "visible": false,
+        "annotion":  "TianDiTu.Terrain.Annotion"
+      },
+      {
+        "name": "Google(街道)",
+        "type": "Google.Normal.Map",
+        "icon": "/static/img/googlemap.png",
+        "visible": false
+      },
+      {
+        "name": "Google(卫星)",
+        "type": "Google.Satellite.Map",
+        "icon": "/static/img/googleimage.png",
+        "visible": false,
+        "annotion":  "Google.Satellite.Annotion"
+      },
+      {
+        "name": "高德地图(街道)",
+        "type": "GaoDe.Normal.Map",
+        "icon": "/static/img/baidumap.png",
+        "visible": true
+      },
+      {
+        "name": "高德地图(卫星)",
+        "type": "GaoDe.Satellite.Map",
+        "icon": "/static/img/baiduimage.png",
+        "visible": true,
+        "annotion": "GaoDe.Satellite.Annotion"
+      },
+      {
+        "name": "Arcgis(卫星)",
+        "type": "Arcgis.Satellite.Map",
+        "icon": "/static/img/bingimage.png",
+        "visible": true,
+        "annotion": "Arcgis.Satellite.Annotion"
+      },
+      {
+        "name": "Geoq(街道)",
+        "type": "Geoq.Normal.Map",
+        "icon": "",
+        "visible": false
+      },
+      {
+        "name": "OSM(街道)",
+        "type": "OSM.Normal.Map",
+        "icon": "/static/img/osm.png",
+        "visible": false
+      },
+      {
+        "name": "百度(街道)",
+        "type": "Baidu.Normal.Map",
+        "icon": "/static/img/baidumap.png",
+        "visible": true
+      },
+      {
+        "name": "百度(卫星)",
+        "type": "Baidu.Satellite.Map",
+        "icon": "/static/img/baiduimage.png",
+        "visible": true,
+        "annotion": "Baidu.Satellite.Annotion"
+      }
+    ],
+    "operationallayers": [
+      {        "id": 0,        "name": "临时数据",        "type": "folder"      },
+      {        "id": 1,        "name": "基础地图数据",        "type": "folder"      },
+      {        "id": 2,        "name": "二调成果",        "type": "folder"      },
+      {        "id": 3,        "name": "土地利用变更调查",        "type": "folder"      },
+      {        "id": 4,        "pid": 3,        "name": "2013土地利用变更调查",        "type": "folder"      },
+      {        "id": 5,        "pid": 3,        "name": "2014土地利用变更调查",        "type": "folder"      },
+      {        "id": 6,        "name": "耕地质量等别年度更新评价",        "type": "folder"      },
+      {        "id": 7,        "pid": 6,        "name": "2015年度成果",        "type": "folder"      },
+      {        "id": 8,        "pid": 6,        "name": "2016年度成果",        "type": "folder"      },
+      {        "id": 9,        "pid": 6,        "name": "2017年度成果",        "type": "folder"      },
+      {        "id": 10,        "name": "其他",        "type": "folder"      },
+      {
+        "pid": 10,
+        "name": "世界地图",
+        "type": "arcgis_dynamic",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer",
+
+        "options": {"opacity": 1,
+          "layers": [0, 1, 2]
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "坡度图",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "土壤类型",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "done":true,
+        "pid": 2,
+        "name": "地类图斑",
+        "type": "arcgis_dynamic",
+        "url": "http://192.168.110.141:6081/geoserver/guizhou/wms?service=WMS&version=1.1.0&request=GetMap&layers=guizhou%3ADLTB2016_mercator&bbox=1.1874160032082671E7%2C2937449.26775323%2C1.1959541523032008E7%2C3012860.5652779834&srs=EPSG%3A900913&format=geojson",
+
+        "options": {"opacity": 1,
+          "layers": [0, 1, 2]
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 2,
+        "name": "线状地物",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 2,
+        "name": "零星地物",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "done":true,
+        "pid": 4,
+        "name": "地类图斑",
+        "type": "wms",
+        "url": "guizhou",
+        "options":{"layers":"vec"
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 4,
+        "name": "线状地物",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 4,
+        "name": "零星地物",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "done":true,
+        "pid": 5,
+        "name": "地类图斑",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 5,
+        "name": "线状地物",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 5,
+        "name": "零星地物",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 7,
+        "name": "县级分等单元",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 7,
+        "name": "国家利用等",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 8,
+        "name": "县级分等单元",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 8,
+        "name": "国家利用等",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 9,
+        "name": "县级分等单元",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 9,
+        "name": "国家利用等",
+        "type": "arcgis_feature",
+        "url": "http://localhost:6080/arcgis/rest/services/土地利用变更调查/地类图斑_m/MapServer/0",
+
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 10,
+        "name": "切片地图",
+        "type": "tms",
+        "url": "http://webrd01.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=7&x={x}&y={y}&z={z}",
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 10,
+        "name": "世界矢量瓦片地图",
+        "type": "tms",
+        "url": "http://192.168.110.141:6081/geoserver/gwc/service/tms/1.0.0/gddsj_test1:xjm_countries@EPSG%3A'+projection_epsg_no+'@pbf/{z}/{x}/{-y}.pbf",
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 10,
+        "name": "GeoJson地图",
+        "type": "geojson",
+        "url": "/static/data/JBNT440106.json",
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 10,
+        "name": "网络地图服务",
+        "type": "wms",
+        "url": "http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi",
+        "options": {
+          "layers": "nexrad-n0r-900913",
+          "format": "image/png",
+          "transparent": true,
+          "styles": ""
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "地形图",
+        "type": "wmts",
+        "url": "http://t0.tianditu.com/ter_w/wmts",
+        "options": {
+          "tk": "a74f08d0fd4435dd072196ef706aa4d3",
+          "layer": "ter",
+          "style": "default",
+          "tilematrixSet": "w",
+          "format": "tile"
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      }
+    ]
+  }
+}

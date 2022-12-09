@@ -1,0 +1,34 @@
+{
+  "tools": [
+    {
+      "name": "图层管理",
+      "panelname": "LayerManagement",
+      "visible": true
+    },
+    {
+      "name": "数据列表",
+      "panelname": "UploadAndAnalysis",
+      "visible": true
+    },
+
+    {
+      "name": "数据管理",
+      "panelname": "Identity",
+      "visible": true
+    },
+    {
+      "name": "数据处理与分析",
+      "panelname": "Measurement",
+      "visible": true
+    },
+    {
+      "name": "耕地质量反演",
+      "panelname": "GDZLEval",
+      "visible": true
+    }
+  ]
+}
+
+
+
+

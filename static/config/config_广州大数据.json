@@ -1,0 +1,916 @@
+{
+  "version":"广州耕地大数据",
+  "map": {
+    "zoom": 9,
+    "guizhoucenter":{
+      "centerx": 26.647202,
+      "centery": 106.615842
+    },
+
+    "centerx": 23.32,
+    "centery": 113.49,
+    "minZoom": 3,
+    "maxZoom": 18,
+    "centerAutoLevel": 15,
+    "copyright": false,
+    "key": "a74f08d0fd4435dd072196ef706aa4d3",
+    "controls": [
+      {
+        "type": "mousePosition",
+        "options": {
+          "emptyString": "无数值",
+          "position": "bottomleft"
+        },
+        "visible": true
+      },
+      {
+        "type": "minimap",
+        "options": {
+          "defaultType": "TianDiTu.Normal.Map",
+          "position": "bottomright",
+          "toggleDisplay": true,
+          "zoomAnimation": true,
+          "width": 400,
+          "height": 250
+        },
+        "visible": true
+      },
+      {
+        "type": "scale",
+        "options": {
+          "position": "bottomleft"
+        },
+        "visible": true
+      },
+      {
+        "type": "iconLayers",
+        "options": {
+          "position": "bottomleft",
+          "maxLayersInRow": 4
+        },
+        "visible": true
+      },
+      {
+        "type": "navbar",
+        "options": {
+          "position": "topleft",
+          "forwardTitle": "返回前一视图",
+          "backTitle": "返回后一视图",
+          "homeTitle": "返回默认视图"
+        },
+        "visible": true
+      },
+      {
+        "type": "locate",
+        "options": {
+          "position": "topleft",
+          "strings": {
+            "title": "定位至当前所在位置",
+            "metersUnit": "米",
+            "feetUnit": "英尺",
+            "popup": "你距离到这点不到{distance}{unit}"
+          }
+        },
+        "visible": true
+      },
+      {
+        "type": "fullscreen",
+        "options": {
+          "position": "topleft",
+          "title": {
+            "false": "进入全屏",
+            "true": "退出全屏"
+          }
+        },
+        "visible": true
+      },
+      {
+        "type": "geoSearch",
+        "options": {
+          "position": "topleft",
+          "style": "button",
+          "showMarker": true,
+          "showPopup": true,
+          "searchLabel": "请输入要搜索的地方",
+          "notFoundMessage": "无结果",
+          "autoClose": true,
+          "autoComplete": true,
+          "keepResult": true
+        },
+        "visible": true
+      },
+      {
+        "type": "contextmenu",
+        "options": {
+          "contextmenu": true,
+          "contextmenuWidth": 140,
+          "contextmenuItems": [
+            {
+              "text": "移到到此处",
+              "callback": "centerMap",
+              "icon": "/static/img/finger-right.png"
+            },
+            {
+              "text": "显示此处经纬度",
+              "callback": "showCoordinates",
+              "icon": "/static/img/locate.png"
+            },
+            "-",
+            {
+              "text": "放大",
+              "callback": "zoomIn",
+              "icon": "/static/img/zoom-in.png"
+            },
+            {
+              "text": "缩小",
+              "callback": "zoomOut",
+              "icon": "/static/img/zoom-out.png"
+            }
+          ]
+        },
+        "visible": true
+      }
+    ],
+    "basemaps": [
+      {
+        "name": "Arcgis(街道)",
+        "type": "Arcgis.Normal.Map",
+        "icon": "/static/img/arcgis-street.png",
+        "visible": true
+      },
+      {
+        "name": "天地图(街道)",
+        "type": "TianDiTu.Normal.Map",
+        "visible": true,
+        "icon": "/static/img/tianditumap.png",
+        "annotion":"TianDiTu.Normal.Annotion"
+      },
+      {
+        "name": "天地图(卫星)",
+        "type": "TianDiTu.Satellite.Map",
+        "icon": "/static/img/tiandituimage.png",
+        "visible": true,
+        "annotion":  "TianDiTu.Satellite.Annotion"
+      },
+      {
+        "name": "天地图(地形)",
+        "type": "TianDiTu.Terrain.Map",
+        "icon": "/static/img/tianditudem.png",
+        "visible": true,
+        "annotion":  "TianDiTu.Terrain.Annotion"
+      },
+      {
+        "name": "Google(街道)",
+        "type": "Google.Normal.Map",
+        "icon": "/static/img/googlemap.png",
+        "visible": true
+      },
+      {
+        "name": "Google(卫星)",
+        "type": "Google.Satellite.Map",
+        "icon": "/static/img/googleimage.png",
+        "visible": true,
+        "annotion":  "Google.Satellite.Annotion"
+      },
+      {
+        "name": "高德地图(街道)",
+        "type": "GaoDe.Normal.Map",
+        "icon": "/static/img/baidumap.png",
+        "visible": true
+      },
+      {
+        "name": "高德地图(卫星)",
+        "type": "GaoDe.Satellite.Map",
+        "icon": "",
+        "visible": false,
+        "annotion": "GaoDe.Satellite.Annotion"
+      },
+      {
+        "name": "Arcgis(卫星)",
+        "type": "Arcgis.Satellite.Map",
+        "icon": "/static/img/bingimage.png",
+        "visible": false,
+        "annotion": "Arcgis.Satellite.Annotion"
+      },
+      {
+        "name": "Geoq(街道)",
+        "type": "Geoq.Normal.Map",
+        "icon": "",
+        "visible": false
+      },
+      {
+        "name": "OSM(街道)",
+        "type": "OSM.Normal.Map",
+        "icon": "/static/img/osm.png",
+        "visible": true
+      },
+      {
+        "name": "百度(街道)",
+        "type": "Baidu.Normal.Map",
+        "icon": "/static/img/baidumap.png",
+        "visible": false
+      },
+      {
+        "name": "百度(卫星)",
+        "type": "Baidu.Satellite.Map",
+        "icon": "/static/img/baiduimage.png",
+        "visible": false,
+        "annotion": "Baidu.Satellite.Annotion"
+      }
+    ],
+    "operationallayers": [
+      {        "id": 0,        "name": "临时数据",        "type": "folder"      },
+      {        "id": 1,        "name": "耕地因素",        "type": "folder"      },
+      {        "id": 2,        "name": "耕地资源",        "type": "folder"      },
+      {        "id": 3,        "name": "土地利用现状",        "type": "folder"      },
+      {        "id": 4,        "name": "耕地质量等别年度更新评价",        "type": "folder"      },
+      {        "id": 5,        "name": "耕地质量监测评价",        "type": "folder"      },
+      {        "id": 6,        "name": "其他",        "type": "folder"      },
+      {
+        "pid": 1,
+        "name": "地形部位",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_01地形部位",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "田面坡度",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_02田面坡度",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "有效土层厚度",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_03有效土层厚度",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "有机质含量",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_04有机质含量",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "耕层质地",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "障碍层类型及距地表深度",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "土体构型",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "土壤容重",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "土壤养分元素",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "砾石含量",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "盐渍化程度",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "碱化度",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "地表岩石露头度",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "黑土层厚度",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "海拔高度",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "田块状况",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "耕作距离",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "田间道路通达度",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "灌溉保证率",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "排水条件",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "田间输水方式",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "林网化程度",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "农田防洪标准",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "灌溉水环境质量",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "土壤重金属",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "有益微量元素",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "白色污染",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "土壤蚯蚓",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 1,
+        "name": "土壤微生物活性",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:地力水平_01全国通用指标_05耕层质地",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 2,
+        "name": "耕地后备资源",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:耕地后备资源",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "styles":"GDHBZY",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 2,
+        "name": "高标农田",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:高标农田",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 2,
+        "name": "基本农田",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:基本农田",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 3,
+        "name": "gwc现状图",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/gwc/service/wms?",
+        "options":{
+          "layers":"guangzhou%3Aproj_DLTB2015Copy",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "styles":"dltb_color",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 3,
+        "name": "现状图2016",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:现状图2015",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "styles":"dltb_color",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 3,
+        "name": "现状图2015",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:现状图2015",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "styles":"dltb_color",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 3,
+        "name": "现状图2014",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:现状图2014",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "styles":"dltb_color",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 3,
+        "name": "现状图2013",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:现状图2013",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "styles":"dltb_color",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 3,
+        "name": "现状图2012",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:现状图2012",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "styles":"dltb_color",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 4,
+        "name": "耕地质量年度变更2016",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:耕地质量年度变更2016",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 4,
+        "name": "耕地质量年度变更2015",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:耕地质量年度变更2016",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 5,
+        "name": "年度监测评价2017",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:年度监测评价2017",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 5,
+        "name": "年度监测评价2016",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:年度监测评价2017",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      },
+      {
+        "pid": 5,
+        "name": "年度监测评价2015",
+        "type": "wms",
+        "url": "http://192.168.110.141:6081/geoserver/guangzhou/wms?",
+        "options":{
+          "layers":"guangzhou:年度监测评价2017",
+          "format":"image/png",
+          "transparent":true,
+          "srs":"EPSG:3857",
+          "opacity": 0.5
+        },
+        "icon": "/static/img/layer.png",
+        "visible": false
+      }
+
+
+
+
+    ]
+  }
+}
